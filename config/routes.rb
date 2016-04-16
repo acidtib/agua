@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       scope "user" do
         post 'new' => 'user#create', as: :user_new
       end
+
+      scope "story" do
+        post 'new' => 'story#create', as: :story_new
+      end
     end
 
   end

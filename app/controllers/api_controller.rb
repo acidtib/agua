@@ -1,6 +1,6 @@
 class ApiController < ActionController::Base
-  before_filter :cors_preflight_check
-  after_filter :cors_set_access_control_headers
+  before_action :cors_preflight_check
+  after_action :cors_set_access_control_headers
 
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'

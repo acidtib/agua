@@ -79,13 +79,42 @@ module ApplicationHelper
     end
 
     if miamibeach.contains?(point)
-      return 'miamibeach'
+      return 'miami-beach'
     end
 
     if designdistrict.contains?(point)
-      return 'designdistrict'
+      return 'design-district'
     end
 
     return 'nada'
+  end
+
+  def water_scale(feet)
+    case feet
+    when 1
+      return '+0+808'
+    when 2
+      return '+0+710'
+    when 3
+      return '+0+615'
+    when 4
+      return '+0+518'
+    when 5
+      return '+0+420'
+    when 6
+      return '+0+321'
+    when 7
+      return '+0+224'
+    when 8
+      return '+0+125'
+    when 9
+      return '+0+25'
+    when 10
+      return '+0-14'
+    end
+  end
+
+  def img_url(img)
+    return ActionController::Base.helpers.image_path(Rails.root.join('app', 'assets', 'images', img))
   end
 end

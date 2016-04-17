@@ -159,14 +159,14 @@
     </object>
     <object type="LMREQUEST" id="z115">
         <attribute name="uuid" type="string">DE038725-E6B0-49DE-81AD-0C746DD3EBDB</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/story/new</attribute>
+        <attribute name="url" type="string">http://api.agua.dev/story/new</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"json":"{\\"latitude\\":\\"25.800436\\",\\"longitude\\":\\"-80.191467\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"json":"{\\"latitude\\":\\"26.011547\\",\\"longitude\\":\\"-80.116119\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">story/new</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z114"></relationship>

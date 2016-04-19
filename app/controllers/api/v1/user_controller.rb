@@ -4,6 +4,7 @@ class API::V1::UserController < ApiController
     status = 200
     if @user = User.find_by_UUID(params['UUID'])
       @user_response = {
+        user_id: @user.id,
         UUID: @user.UUID
       }
     else
@@ -12,6 +13,7 @@ class API::V1::UserController < ApiController
       )
 
       @user_response = {
+        user_id: @user_create.id,
         UUID: @user_create.UUID
       }
     end

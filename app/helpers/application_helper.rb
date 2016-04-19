@@ -92,25 +92,25 @@ module ApplicationHelper
   def water_scale(feet)
     case feet
     when 1
-      return '+0+808'
+      return "+0+808"
     when 2
-      return '+0+710'
+      return "+0+710"
     when 3
-      return '+0+615'
+      return "+0+615"
     when 4
-      return '+0+518'
+      return "+0+518"
     when 5
-      return '+0+420'
+      return "+0+420"
     when 6
-      return '+0+321'
+      return "+0+321"
     when 7
-      return '+0+224'
+      return "+0+224"
     when 8
-      return '+0+125'
+      return "+0+125"
     when 9
-      return '+0+25'
+      return "+0+25"
     when 10
-      return '+0-14'
+      return "+0-14"
     end
   end
 

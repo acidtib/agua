@@ -11,7 +11,8 @@ locations = [
   [2, "Miami Beach"],
   [3, "Downtown"],
   [4, "Design District"],
-  [5, "Brickell"]
+  [5, "Brickell"],
+  [6, "Nada"]
 ]
 
 locations.each do |location|

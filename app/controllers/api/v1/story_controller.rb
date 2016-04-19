@@ -3,7 +3,7 @@ class API::V1::StoryController < ApiController
 
   def stories
     status = 200
-    @location = Location.find_by_slug(params['slug'])
+    @location = Location.find_by_slug(params['location'])
     @stories = Story.where(location_id: @location.id)
 
     @stories_response = @stories.map do |story|

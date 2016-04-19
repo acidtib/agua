@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       end
 
       scope "story" do
-        post 'get/:slug' => 'story#stories', as: :story_all
+        post 'get/location' => 'story#stories', as: :story_all
         post 'new' => 'story#create', as: :story_new
       end
     end

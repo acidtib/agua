@@ -184,8 +184,9 @@
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z115"></relationship>
     </object>
     <object type="LMREQUEST" id="z117">
+        <attribute name="body" type="string">[{"data":{"json":"{\\"location\\":\\"wynwood\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
         <attribute name="uuid" type="string">2A263B40-5690-46DB-8F0C-E96165F7D065</attribute>
-        <attribute name="url" type="string">http://localhost:3000/api/story/get/miami-beach</attribute>
+        <attribute name="url" type="string">http://10.34.65.25:3000/api/story/get/location</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>

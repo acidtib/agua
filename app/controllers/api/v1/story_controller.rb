@@ -15,8 +15,8 @@ class API::V1::StoryController < ApiController
         under: story.under,
         latitude: story.latitude,
         longitude: story.longitude,
-        photo_original: "http://192.168.1.119:3000/stories/#{story.story_id}_story.jpeg",
-        photo_story: "http://192.168.1.119:3000/stories/#{story.story_id}_story.jpeg"
+        photo_original: "http://10.34.65.25:3000/stories/#{story.story_id}_story.jpeg",
+        photo_story: "http://10.34.65.25:3000/stories/#{story.story_id}_story.jpeg"
       }
     end
 

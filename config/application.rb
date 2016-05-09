@@ -12,6 +12,8 @@ module Agua
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
     # Allow get, post and options form anywhere to the api endpoints
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do

@@ -4,7 +4,7 @@ class API::V1::StoryController < ApiController
   def stories
     status = 200
     @location = Location.find_by_slug(params['location'])
-    @stories = Story.where(location_id: @location.id)
+    @stories = Story.where(location_id: @location.id).order('updated_at DESC')
 
     @stories_response = @stories.map do |story|
       {
@@ -15,8 +15,8 @@ class API::V1::StoryController < ApiController
         under: story.under,
         latitude: story.latitude,
         longitude: story.longitude,
-        photo_original: "http://192.168.6.120:3000/stories/#{story.story_id}_story.jpeg",
-        photo_story: "http://192.168.6.120:3000/stories/#{story.story_id}_story.jpeg"
+        photo_original: "#{ENV['API_DOMAIN']}/stories/#{story.story_id}_story.png",
+        photo_story: "#{ENV['API_DOMAIN']}/stories/#{story.story_id}_story.png"
       }
     end
 
@@ -43,20 +43,20 @@ class API::V1::StoryController < ApiController
     @user = User.find_by_UUID(uuid_id)
 
     # SAVE BASE64 TO IMAGE
-    jpeg_data = Base64.decode64(photo)
-    File.open(Rails.root.join("public", "stories", "#{story_id}.jpeg"), 'wb') do |f|
-      f.write jpeg_data
+    png_data = Base64.decode64(photo)
+    File.open(Rails.root.join("public", "stories", "#{story_id}.png"), 'wb') do |f|
+      f.write png_data
     end
 
     # GET ELEVATION INFO FROM GOOGLE
-    get_elevation = HTTParty.get("https://maps.googleapis.com/maps/api/elevation/json?locations=#{latitude},#{longitude}&key=AIzaSyCj44N7XnQUWo0EgS2tkW9qTSqSl-lMNxM")
+    get_elevation = HTTParty.get("https://maps.googleapis.com/maps/api/elevation/json?locations=#{latitude},#{longitude}&key=#{ENV['ELEVATION_API_KEY']}")
     data_elevation = JSON.parse(get_elevation.body)
 
     #DID WE GET THE INFO OR NOT
     if get_elevation.code == 200 && data_elevation['status'] == 'OK'
       elevation = data_elevation['results'][0]['elevation'].to_i * 3.2808.to_i
 
-      image = MiniMagick::Image.new("public/stories/#{story_id}.jpeg")
+      image = MiniMagick::Image.new("public/stories/#{story_id}.png")
 
       at_point = in_point(latitude, longitude)
       location_id = Location.find_by_slug(at_point).id
@@ -91,8 +91,8 @@ class API::V1::StoryController < ApiController
         c.geometry "+40+40"
       end
 
-      image.write "public/stories/#{story_id}_story.jpeg"
-      # Rails.root.join('public', 'stories', "#{story_id}_story.jpeg")
+      image.write "public/stories/#{story_id}_story.png"
+      # Rails.root.join('public', 'stories', "#{story_id}_story.png")
 
       create_story = Story.create(
         user_id: @user.id,
@@ -111,7 +111,7 @@ class API::V1::StoryController < ApiController
         under: under,
         latitude: latitude,
         longitude: longitude,
-        photo: "http://192.168.1.119:3000/stories/#{story_id}_story.jpeg"
+        photo: "#{ENV['API_DOMAIN']}/stories/#{story_id}_story.png"
       }
     else
 

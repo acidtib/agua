@@ -13,3 +13,134 @@
  *= require_tree .
  *= require_self
  */
+
+ /*FONTS*/
+@font-face {
+  font-family: 'Futura_Md_BT';
+  src: font-url('FuturaBT-Medium.eot');
+  src: font-url('FuturaBT-Medium.eot?#iefix') format('embedded-opentype'),
+    font-url('FuturaBT-Medium.woff') format('woff'),
+    font-url('FuturaBT-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*MISC*/
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Futura_Md_BT';
+}
+
+h1 {
+  color: #00B0BD;
+}
+
+header,
+footer {
+  background: #00B0BD;
+}
+
+button {
+  text-transform: uppercase;
+  text-align: center;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #ffffff;
+  padding: 8px 30px;
+  border-radius: 18px;
+  font-size: 12px;
+}
+
+/*HEADER*/
+header {
+  padding: 37px 37px;
+  -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 50%, 0 100%);
+  clip-path: polygon(0 0, 1600px 0, 1600px 50%, 0 100%);
+}
+
+header .logo {
+  width: 142px;
+}
+
+header .content {
+  width: 473px;
+  padding: 17px 13px;
+  margin-bottom: 65px;
+}
+
+header .content p {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 26px;
+}
+
+/*MAIN*/
+.main {
+
+}
+
+.main .how-it-works h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 41px;
+}
+
+.main .how-it-works p,
+.main .notice {
+  text-align: center;
+  width: 480px;
+  margin: 0 auto;
+  color: #939598;
+}
+
+.main .instructions {
+  overflow: hidden;
+  margin-top: 70px;
+  margin-bottom: -26px;
+}
+
+.main .instructions div {
+  width: 33%;
+  float: left;
+}
+
+.main .instructions div img {
+  width: 100%;
+}
+
+.main .stories {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+
+/*FOOTER*/
+footer {
+  padding: 43px 0px;
+}
+
+footer .content {
+  text-align: center;
+}
+
+footer .content p {
+  color: #ffffff;
+  width: 217px;
+  margin: 0 auto;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+footer .content .social {
+  overflow: hidden;
+  width: 59px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+footer .content .social img {
+  /*float: left;*/
+  width: 100%;
+}

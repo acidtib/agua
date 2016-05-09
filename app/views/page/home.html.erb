@@ -1,0 +1,69 @@
+<header>
+  <%= image_tag "logo.png", class: "logo" %>
+
+  <div class="content">
+    <p class="welcome">
+      find out just how screwed you are in the impending doom of an underwater miami
+    </p>
+
+    <button>download app</button>
+  </div>
+</header>
+
+<%= image_tag "top.png", style: "width: 501px; position: absolute; top: 67px; transform: rotate(-18deg); margin: 0 auto; left: 101px; right: 0;" %>
+
+<div class="main" style="margin-top: 149px;">
+  <div class="how-it-works">
+    <h1>how it works</h1>
+
+    <p>
+      Take a photo of your surroundings and let mia underwater calculate how underwater your current location will be in the year 2050. This information is pulled from a Google API and open data of sea level rise predictions by scientists.
+    </p>
+  </div>
+
+  <div class="instructions">
+    <div>
+      <%= image_tag "instructions/1.png" %>
+    </div>
+    <div>
+      <%= image_tag "instructions/2.png" %>
+    </div>
+    <div>
+      <%= image_tag "instructions/3.png" %>
+    </div>
+  </div>
+
+  <p class="notice">
+    Every image submitted is then displayed in it's location's corresponding story.
+  </p>
+
+  <%= image_tag "stories.png", style: "display: block; margin: 0 auto; margin-top: 49px; margin-bottom: 61px;" %>
+
+  <!-- <ul class="stories">
+    <li>
+      <div class="icon">
+
+      </div>
+      <div class="story">
+        <img src="assets/img/location-icons/wynwood.png">
+      </div>
+    </li>
+  </ul> -->
+</div>
+
+<footer>
+  <div class="content">
+    <button>download app</button>
+
+    <p>
+      *don't forget to spread awareness by sharing your results on <br> social media
+    </p>
+
+    <div class="social">
+      <!-- <img src="assets/img/social/facebook.png">
+      <img src="assets/img/social/twitter.png"> -->
+
+      <%= image_tag "social.png" %>
+    </div>
+  </div>
+</footer>

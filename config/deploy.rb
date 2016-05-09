@@ -38,7 +38,7 @@ set :keep_releases, 3
 
 set :use_sudo, false
 set :bundle_binstubs, nil
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', '.env')
+set :linked_files, fetch(:linked_files, []).push('.env')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 after 'deploy:publishing', 'deploy:restart'

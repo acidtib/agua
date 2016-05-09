@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: agua_production
-  username: agua
-  password: <%= ENV['AGUA_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

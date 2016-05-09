@@ -7,9 +7,6 @@ gem 'rails', '~> 5.0.0.rc1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 
-gem 'mysql2'
-# Use Puma as the app server
-gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -42,6 +39,9 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'dotenv-rails'
 
+group :production do
+  gem 'unicorn'
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -55,10 +55,16 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
+  gem 'puma'
+
   gem 'better_errors'
   gem 'thin'
   gem 'annotate'
   gem 'quiet_assets'
+
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

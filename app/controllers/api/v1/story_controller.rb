@@ -91,7 +91,9 @@ class API::V1::StoryController < ApiController
         c.geometry "+40+40"
       end
 
-      image.write "public/stories/#{story_id}_story.png"
+      story_image_path = "public/stories/#{story_id}_story.png"
+      image.write story_image_path
+      File.chmod(0644, story_image_path)
       # Rails.root.join('public', 'stories', "#{story_id}_story.png")
 
       create_story = Story.create(

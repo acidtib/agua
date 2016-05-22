@@ -38,6 +38,14 @@ class API::V1::StoryController < ApiController
     longitude = params['longitude']
     photo = params['photo']
     uuid_id = params['uuid_id']
+
+    case params['share']
+    when 'yes'
+      the_share = true;
+    when 'no'
+      the_share = false;
+    end
+
     story_id = SecureRandom.hex
 
     @user = User.find_by_UUID(uuid_id)
@@ -103,7 +111,8 @@ class API::V1::StoryController < ApiController
         elevation: elevation,
         under: under,
         latitude: latitude,
-        longitude: longitude
+        longitude: longitude,
+        share: the_share
       )
 
       @story_response = {

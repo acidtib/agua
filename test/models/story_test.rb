@@ -14,6 +14,7 @@
 #  photo_story    :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  share          :boolean
 #
 
 require 'test_helper'

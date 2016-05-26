@@ -75,7 +75,7 @@ class API::V1::StoryController < ApiController
       else
         under = 10 - elevation
 
-        if under < 11
+        if under > 11
           water = MiniMagick::Image.new(img_url('water.png'))
         else
           water = MiniMagick::Image.new(img_url("water/c#{under}.png"))

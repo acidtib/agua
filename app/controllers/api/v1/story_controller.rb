@@ -74,7 +74,12 @@ class API::V1::StoryController < ApiController
         badge = MiniMagick::Image.new(img_url('badges/safezone.png'))
       else
         under = 10 - elevation
-        water = MiniMagick::Image.new(img_url('water.png'))
+
+        if under < 11
+          water = MiniMagick::Image.new(img_url('water.png'))
+        else
+          water = MiniMagick::Image.new(img_url("water/c#{under}.png"))
+        end
 
         logger.info at_point
 

@@ -4,7 +4,7 @@ lock '3.5.0'
 # Change these
 server '45.55.129.24', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:studiouni/agua.git'
+set :repo_url,        'git@github.com:arubinofaux/agua.git'
 set :application,     'mia'
 set :user,            'deployer'
 set :puma_threads,    [4, 16]
